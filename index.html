@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Metadata -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- SEO -->
+		<meta name="author" content="Douglas Tiepolo" />
+		<meta
+			name="description"
+			content="CMS provides mental health counselling for cat owners (those cute little devils we love so much)."
+		/>
+		<meta name="keywords" content="mental, health, counselling, ireland" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="/css/styles.css" />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Fontawesome icons CDN -->
+		<script src="https://kit.fontawesome.com/943e091a41.js" crossorigin="anonymous"></script>
+
+		<!-- Favicon --- Converted with https://favicon.io/favicon-converter/ -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<title>CMS - Mental Health Counselling</title>
+	</head>
+	<body>
+		<!-- Navbar beginning -->
+		<nav class="nav">
+			<ul class="nav-navbar">
+				<div class="nav-navbar__logo">
+					<li class="nav-navbar__link-item">
+						<img src="/images/logo.svg" alt="CMS Mental Health Counselling logo" />
+					</li>
+				</div>
+				<div class="nav-navbar__links" id="navbar-links">
+					<li class="nav-navbar__link-item"><a href="#home">Home</a></li>
+					<li class="nav-navbar__link-item"><a href="#about">About</a></li>
+					<li class="nav-navbar__link-item"><a href="#gallery">Gallery</a></li>
+					<li class="nav-navbar__link-item"><a href="#contact">Contact Us</a></li>
+				</div>
+			</ul>
+		</nav>
+		<div tabindex="0" class="nav-menu-icon" id="burger-menu" onclick="toggleNavbar()">
+			<div class="top-bar"></div>
+			<div class="mid-bar"></div>
+			<div class="bottom-bar"></div>
+		</div>
+		<nav class="nav-overlay" id="sidebar">
+			<div class="overlay-content">
+				<a class="nav-link" href="#home">Home</a>
+				<a class="nav-link" href="#about">About</a>
+				<a class="nav-link" href="#gallery">Gallery</a>
+				<a class="nav-link" href="#contact">Contact Us</a>
+			</div>
+		</nav>
+		<!-- Navbar end -->
+
+		<!-- Home beginning -->
+		<div class="home__img">
+			<!-- Image taken from: https://www.marthastewart.com/1530458/common-cat-body-language-decoded -->
+			<img src="/images/cat-home.jpg" alt="Cat rolling on back" />
+		</div>
+		<section id="home" class="home">
+			<header>
+				<h2>Something here</h2>
+			</header>
+		</section>
+		<!-- Home end -->
+
+		<!-- About us beginning -->
+		<section id="about" class="about">
+			<header>
+				<h1>About</h1>
+			</header>
+		</section>
+		<!-- About us end -->
+
+		<!-- Gallery beginning -->
+		<section id="gallery" class="gallery">
+			<header>
+				<h1>Gallery</h1>
+			</header>
+			<div class="image-panel">
+				<div class="image-panel__card">
+					<!-- Image taken from: https://www.reddit.com/r/videos/comments/6nwpl5/two_cats_asking_for_food/ -->
+					<img src="/images/cat-asking-for-food.jpg" alt="Cat asking for food" />
+					<div class="img-overlay">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="image-panel__card">
+					<!-- Image taken from: https://www.petbucket.com/blog/63413/how-to-introduce-your-cat-to-their-own-bed-.html -->
+					<img src="/images/cat-at-bed.jpg" alt="Cat at bed" />
+					<div class="img-overlay">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="image-panel__card">
+					<!-- Image taken from: https://www.helenbushe.com/ignored-cat/ -->
+					<img src="/images/cat-ignoring-you.jpg" alt="Cat ignoring owner" />
+					<div class="img-overlay">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="image-panel__card">
+					<!-- Image taken from: https://animalpath.org/cat-obsessed-with-human-food/ -->
+					<img src="/images/Cat-Obsessed-With-Human-Food.jpg" alt="Cat obsessed with human food" />
+					<div class="img-overlay">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="image-panel__card">
+					<!-- Image taken from:  -->
+					<img src="" alt="" />
+					<div class="img-overlay">
+						<p></p>
+					</div>
+				</div>
+
+				<div class="image-panel__card">
+					<!-- Image taken from:  -->
+					<img src="" alt="" />
+					<div class="img-overlay">
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Gallery end -->
+
+		<!-- Contact us beginning -->
+		<section id="contact" class="contact">
+			<header>
+				<h1>Contact Us</h1>
+				<p class="contact-paragraph">
+					Should you have questions or are in need of any assistance, please do not hesitate to
+					contact us.
+				</p>
+			</header>
+			<div class="contact-card">
+				<form class="contact-form" action="" id="contact-form">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" placeholder="Jane Doe" required />
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" placeholder="jane_doe@email.com" required />
+					<label for="phone">Phone Number</label>
+					<input type="tel" name="phone" id="phone" placeholder="77 777 7777" required />
+					<label for="message">Message</label>
+					<textarea name="message" id="message" form="contact-form" required></textarea>
+					<button type="submit" id="form-button">SEND <i class="fas fa-paper-plane"></i></button>
+				</form>
+			</div>
+		</section>
+		<!-- Contact us end -->
+
+		<!-- Footer beginning -->
+		<footer id="footer" class="footer">
+			<p>
+				Developed by
+				<span class="footer-span"
+					><a href="https://www.linkedin.com/in/douglas-tiepolo/">Douglas Tiepolo</a></span
+				>
+			</p>
+		</footer>
+		<!-- Footer end -->
+
+		<!-- JS -->
+		<script src="/js/scripts.js"></script>
+	</body>
+</html>
