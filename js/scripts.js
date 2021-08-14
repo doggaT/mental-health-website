@@ -42,6 +42,35 @@ document.onclick = function (e) {
 
 /* Navbar end */
 
+/* Gallery beginning */
+let zoomImage = function () {
+	let copiedImage = this.cloneNode();
+	copiedImage.classList.remove('image-panel__card');
+
+	let box = document.getElementById('image-zoom');
+	box.innerHTML = '';
+	box.appendChild(copiedImage);
+
+	box = document.getElementById('image-overlay');
+	box.classList.add('show');
+};
+
+// Attach the clicked image into the container to zoom the image
+window.addEventListener('load', function () {
+	let images = document.getElementsByClassName('image-panel__img');
+	if (images.length > 0) {
+		for (let img of images) {
+			img.addEventListener('click', zoomImage);
+		}
+	}
+
+	// Close image zoom
+	document.getElementById('image-overlay').addEventListener('click', function () {
+		this.classList.remove('show');
+	});
+});
+/* Gallery end */
+
 /* Form beginning */
 let form = document.getElementById('contact-form');
 let userName = document.getElementById('name').value;
@@ -50,6 +79,7 @@ let userPhone = document.getElementById('phone').value;
 let userMessage = document.getElementById('message').innerHTML;
 let formBtn = document.getElementById('form-button');
 
+// Get the form info
 form.addEventListener('submit', function () {
 	// do something
 });

@@ -74,16 +74,17 @@
 			<img src="/images/cat-home.jpg" alt="Cat rolling on back" />
 		</div>
 		<section id="home" class="home">
-			<header>
-				<h2>Something here</h2>
+			<header class="home-header">
+				<p>Something here</p>
 			</header>
 		</section>
 		<!-- Home end -->
 
 		<!-- About us beginning -->
 		<section id="about" class="about">
-			<header>
+			<header class="about-header">
 				<h1>About</h1>
+				<p>description</p>
 			</header>
 		</section>
 		<!-- About us end -->
@@ -93,55 +94,52 @@
 			<header>
 				<h1>Gallery</h1>
 			</header>
-			<div class="image-panel">
-				<div class="image-panel__card">
-					<!-- Image taken from: https://www.reddit.com/r/videos/comments/6nwpl5/two_cats_asking_for_food/ -->
-					<img src="/images/cat-asking-for-food.jpg" alt="Cat asking for food" />
-					<div class="img-overlay">
-						<p></p>
-					</div>
-				</div>
-
-				<div class="image-panel__card">
-					<!-- Image taken from: https://www.petbucket.com/blog/63413/how-to-introduce-your-cat-to-their-own-bed-.html -->
-					<img src="/images/cat-at-bed.jpg" alt="Cat at bed" />
-					<div class="img-overlay">
-						<p></p>
-					</div>
-				</div>
-
-				<div class="image-panel__card">
-					<!-- Image taken from: https://www.helenbushe.com/ignored-cat/ -->
-					<img src="/images/cat-ignoring-you.jpg" alt="Cat ignoring owner" />
-					<div class="img-overlay">
-						<p></p>
-					</div>
-				</div>
-
-				<div class="image-panel__card">
-					<!-- Image taken from: https://animalpath.org/cat-obsessed-with-human-food/ -->
-					<img src="/images/Cat-Obsessed-With-Human-Food.jpg" alt="Cat obsessed with human food" />
-					<div class="img-overlay">
-						<p></p>
-					</div>
-				</div>
-
-				<div class="image-panel__card">
-					<!-- Image taken from:  -->
-					<img src="" alt="" />
-					<div class="img-overlay">
-						<p></p>
-					</div>
-				</div>
-
-				<div class="image-panel__card">
-					<!-- Image taken from:  -->
-					<img src="" alt="" />
-					<div class="img-overlay">
-						<p></p>
-					</div>
-				</div>
+			<div id="image-overlay">
+				<div id="image-zoom"></div>
 			</div>
+			<ul class="image-panel" id="img-panel">
+				<li class="image-panel__card">
+					<!-- Image taken from: https://www.reddit.com/r/videos/comments/6nwpl5/two_cats_asking_for_food/ -->
+					<img
+						class="image-panel__img"
+						src="/images/cat-asking-for-food.jpg"
+						alt="Cat asking for food"
+					/>
+				</li>
+
+				<li class="image-panel__card">
+					<!-- Image taken from: https://www.petbucket.com/blog/63413/how-to-introduce-your-cat-to-their-own-bed-.html -->
+					<img class="image-panel__img" src="/images/cat-at-bed.jpg" alt="Cat at bed" />
+				</li>
+
+				<li class="image-panel__card">
+					<!-- Image taken from: https://www.helenbushe.com/ignored-cat/ -->
+					<img
+						class="image-panel__img"
+						src="/images/cat-ignoring-you.jpg"
+						alt="Cat ignoring owner"
+					/>
+				</li>
+
+				<li class="image-panel__card">
+					<!-- Image taken from: https://animalpath.org/cat-obsessed-with-human-food/ -->
+					<img
+						class="image-panel__img"
+						src="/images/Cat-Obsessed-With-Human-Food.jpg"
+						alt="Cat obsessed with human food"
+					/>
+				</li>
+
+				<li class="image-panel__card">
+					<!-- Image taken from:  -->
+					<img class="image-panel__img" src="" alt="" />
+				</li>
+
+				<li class="image-panel__card">
+					<!-- Image taken from:  -->
+					<img class="image-panel__img" src="" alt="" />
+				</li>
+			</ul>
 		</section>
 		<!-- Gallery end -->
 
