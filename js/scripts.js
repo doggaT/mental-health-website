@@ -72,74 +72,83 @@ window.addEventListener('load', function () {
 /* Gallery end */
 
 /* Form beginning */
+// Get the imput values from the form
 let form = document.getElementById('contact-form');
 let userName = document.getElementById('name');
 let userEmail = document.getElementById('email');
 let userPhone = document.getElementById('phone');
 let userMessage = document.getElementById('message');
-let formBtn = document.getElementById('form-button');
-
-//Check if phone is valid
-function checkPhone(input) {
-	const valid = /^\d+$/;
-
-	if (valid.test(input.trim()) && input.length > 0) {
-		showSucces(input);
-	} else {
-		showError(input, 'Please enter a valid phone number');
-	}
-}
-
-// Set Error Message
-function setError(input) {
-	const formGroup = input.parentElement;
-
-	formGroup.className = 'contact-form error';
-}
-
-// Set Success Message
-function setSuccess(input) {
-	const formGroup = input.parentElement;
-	formGroup.className = 'contact-form success';
-}
-
-// Check Valid Email
-function validEmail(email) {
-	const re =
-		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return re.test(String(email).toLowerCase());
-}
-
-function validateForm(form) {
-	if (form.name.value.trim() === '') {
-		setError(form.name);
-		return false;
-	} else {
-		setSuccess(form.name);
-	}
-
-	if (form.email.value.trim() === '' || !validEmail(form.email.value.trim())) {
-		setError(form.email);
-		return false;
-	} else {
-		setSuccess(form.email);
-	}
-
-	if (form.message.value.trim() === '') {
-		setError(form.message);
-		return false;
-	} else {
-		setSuccess(form.message);
-	}
-
-	// Add form information into an array
-	let formData = [{ username: userName, message: userMessage, email: userEmail, phone: userPhone }];
-
-	return true;
-}
 
 form.addEventListener('submit', e => {
+	// Prevents the page from refreshing on submiting form
 	e.preventDefault();
+
+	checkInputs();
+
+	// Add form information into an array to be sent to the backend
+	let formData = [{ username: userName, message: userMessage, email: userEmail, phone: userPhone }];
 });
+
+function checkInputs() {
+	// Removes whitespaces from the input values
+	const nameValue = userName.value.trim();
+	const emailValue = userEmail.value.trim();
+	const phoneValue = userPhone.value.trim();
+	const messageValue = userMessage.value.trim();
+
+	if (nameValue === '') {
+		setErrorFor(userName, 'Please enter your name');
+	} else {
+		setSuccessFor(userName);
+	}
+
+	if (emailValue === '') {
+		setErrorFor(userEmail, 'Please enter your email');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(userEmail, 'Please enter a valid email');
+	} else {
+		setSuccessFor(userEmail);
+	}
+
+	if (phoneValue === '') {
+		setErrorFor(userPhone, 'Please enter your phone number');
+	} else if (!isPhone(phoneValue)) {
+		setErrorFor(userPhone, 'Please enter a valid phone number');
+	} else {
+		setSuccessFor(userPhone);
+	}
+
+	if (messageValue === '') {
+		setErrorFor(userMessage, 'Please enter your message');
+	} else {
+		setSuccessFor(userMessage);
+	}
+}
+
+// Set the error status and display the tooltip
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+// Set the success status
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+
+// Check if the email is valid
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+		email
+	);
+}
+
+// Check if the phone has only numbers with a length of 9 or 10
+function isPhone(phone) {
+	return /^([0-9]){8,9}$/.test(Number(phone));
+}
 
 /* Form end */

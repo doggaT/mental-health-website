@@ -358,32 +358,25 @@ header .contact-paragraph {
 }
 
 .contact-form {
-	display: flex;
 	width: 75%;
-	flex-direction: column;
+}
+
+.form-control {
 	position: relative;
+	width: 100%;
+	margin-bottom: 4rem;
 }
 
-.contact-form label {
-	font-size: 0.95em;
-	font-weight: 500;
-}
-
-.contact-form label {
+.form-control label {
+	display: inline-block;
 	margin-bottom: 0.7rem;
 	font-size: 0.95em;
 	font-weight: 500;
 }
 
-.contact-form label:not(.contact-form label:first-child) {
-	margin-top: 3rem;
-	font-size: 0.95em;
-	font-weight: 500;
-}
-
-.contact-form input[type='text'],
-.contact-form input[type='tel'],
-.contact-form input[type='email'] {
+.form-control input {
+	display: block;
+	width: 100%;
 	height: 2.6rem;
 	border-radius: 0.2rem;
 	border-style: solid;
@@ -396,7 +389,9 @@ header .contact-paragraph {
 	background-color: aliceblue;
 }
 
-.contact-form textarea {
+.form-control textarea {
+	display: block;
+	width: 100%;
 	height: 8rem;
 	border-style: solid;
 	border-width: 0.1rem;
@@ -407,13 +402,12 @@ header .contact-paragraph {
 	padding-left: 1rem;
 	padding-top: 1rem;
 	outline: none;
+	resize: none;
 	background-color: aliceblue;
 }
 
-.contact-form input[type='text']:focus,
-.contact-form input[type='tel']:focus,
-.contact-form input[type='email']:focus,
-.contact-form textarea:focus {
+.form-control input:focus,
+.form-control textarea:focus {
 	outline: 0;
 	background-color: rgb(244, 250, 247);
 }
@@ -433,7 +427,7 @@ header .contact-paragraph {
 	padding: 1rem 2rem;
 	border-radius: 0.2rem;
 	width: fit-content;
-	margin-left: auto;
+	float: right;
 	margin-top: 1.5rem;
 	border: none;
 	cursor: pointer;
@@ -457,27 +451,46 @@ header .contact-paragraph {
 /* Contact end */
 
 /* Form validation beginning */
-.contact-form.success input,
-.contact-form.success textarea {
+.form-control.success input,
+.form-control.success textarea {
 	border-style: solid;
 	border-width: 0.1rem;
 	border-color: var(--success-clr);
 }
 
-.contact-form.error input,
-.contact-form.error textarea {
+.form-control.error input,
+.form-control.error textarea {
 	border-style: solid;
 	border-width: 0.1rem;
 	border-color: var(--error-clr);
 }
 
-.contact-form small {
-	display: none;
+.form-control small {
+	position: absolute;
+	left: 0;
+	top: 5rem;
 	color: var(--error-clr);
+	visibility: hidden;
 }
 
-.contact-form.error small {
-	display: block;
+.form-control small#invalid-message {
+	position: absolute;
+	left: 0;
+	top: 10.4rem;
+	color: var(--error-clr);
+	visibility: hidden;
+}
+
+.form-control small#invalid-message {
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
+.form-control.error small#invalid-message {
+	visibility: visible;
 }
 /* Form validation end */
 

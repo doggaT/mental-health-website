@@ -94,10 +94,13 @@
 			<header>
 				<h1>Gallery</h1>
 			</header>
-			<!-- Container for the zoomed image -->
+
+			<!-- Container for the zoomed image beginning -->
 			<div id="image-overlay">
 				<div id="image-zoom"></div>
 			</div>
+			<!-- Container for the zoomed image end -->
+
 			<ul class="image-panel" id="img-panel">
 				<li class="image-panel__card">
 					<!-- Image taken from: https://www.reddit.com/r/videos/comments/6nwpl5/two_cats_asking_for_food/ -->
@@ -154,33 +157,36 @@
 				</p>
 			</header>
 			<div class="contact-card">
-				<form
-					class="contact-form"
-					id="contact-form"
-					onsubmit="return validateForm(this)"
-					novalidate
-				>
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" placeholder="Jane Doe" required />
-					<small class="alert">Please enter a valid name</small>
+				<form class="contact-form" id="contact-form" novalidate>
+					<div class="form-control">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" placeholder="Jane Doe" required />
+						<small id="invalid-name"></small>
+					</div>
 
-					<label for="email">Email</label>
-					<input type="email" name="email" id="email" placeholder="jane_doe@email.com" required />
-					<small class="alert">Please enter a valid email</small>
+					<div class="form-control">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" placeholder="jane_doe@email.com" required />
+						<small id="invalid-email"></small>
+					</div>
 
-					<label for="phone">Phone Number</label>
-					<input type="tel" name="phone" id="phone" placeholder="77 777 7777" required />
-					<small class="alert">Please enter a valid phone number</small>
+					<div class="form-control">
+						<label for="phone">Phone Number</label>
+						<input type="tel" name="phone" id="phone" placeholder="77 777 7777" required />
+						<small id="invalid-phone"></small>
+					</div>
 
-					<label for="message">Message</label>
-					<textarea
-						name="message"
-						id="message"
-						form="contact-form"
-						placeholder="What's on your mind?"
-						required
-					></textarea>
-					<small class="alert">Please fill out your message</small>
+					<div class="form-control" id="text-area">
+						<label for="message">Message</label>
+						<textarea
+							name="message"
+							id="message"
+							form="contact-form"
+							placeholder="What's on your mind?"
+							required
+						></textarea>
+						<small id="invalid-message"></small>
+					</div>
 
 					<button type="submit" id="form-button">SEND <i class="fas fa-paper-plane"></i></button>
 				</form>
