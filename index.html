@@ -28,7 +28,7 @@
 		<!-- Fontawesome icons CDN -->
 		<script src="https://kit.fontawesome.com/943e091a41.js" crossorigin="anonymous"></script>
 
-		<!-- Favicon --- Converted with https://favicon.io/favicon-converter/ -->
+		<!-- Favicon --- Created by me and converted to favicon with https://favicon.io/favicon-converter/ -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -94,6 +94,7 @@
 			<header>
 				<h1>Gallery</h1>
 			</header>
+			<!-- Container for the zoomed image -->
 			<div id="image-overlay">
 				<div id="image-zoom"></div>
 			</div>
@@ -153,15 +154,34 @@
 				</p>
 			</header>
 			<div class="contact-card">
-				<form class="contact-form" action="" id="contact-form">
+				<form
+					class="contact-form"
+					id="contact-form"
+					onsubmit="return validateForm(this)"
+					novalidate
+				>
 					<label for="name">Name</label>
 					<input type="text" name="name" id="name" placeholder="Jane Doe" required />
+					<small class="alert">Please enter a valid name</small>
+
 					<label for="email">Email</label>
 					<input type="email" name="email" id="email" placeholder="jane_doe@email.com" required />
+					<small class="alert">Please enter a valid email</small>
+
 					<label for="phone">Phone Number</label>
 					<input type="tel" name="phone" id="phone" placeholder="77 777 7777" required />
+					<small class="alert">Please enter a valid phone number</small>
+
 					<label for="message">Message</label>
-					<textarea name="message" id="message" form="contact-form" required></textarea>
+					<textarea
+						name="message"
+						id="message"
+						form="contact-form"
+						placeholder="What's on your mind?"
+						required
+					></textarea>
+					<small class="alert">Please fill out your message</small>
+
 					<button type="submit" id="form-button">SEND <i class="fas fa-paper-plane"></i></button>
 				</form>
 			</div>
