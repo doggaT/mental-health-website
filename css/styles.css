@@ -250,7 +250,7 @@ header h1 {
 }
 
 .home-header p {
-	margin-top: 3rem;
+	font-size: 1.2em;
 }
 /* Home end */
 
@@ -260,8 +260,12 @@ header h1 {
 	margin: 8rem auto;
 }
 
-.about-header p {
+.about-header p:first-of-type {
 	margin-top: 3rem;
+}
+
+.about-header p {
+	font-size: 1.2em;
 }
 /* About end */
 
@@ -342,6 +346,7 @@ header h1 {
 header .contact-paragraph {
 	margin: 3rem 0;
 	max-width: 90%;
+	font-size: 1.2em;
 }
 
 .contact-card {
@@ -513,6 +518,16 @@ footer {
 @media screen and (max-width: 1390px) {
 	.contact-form {
 		max-width: 80%;
+	}
+}
+
+@media screen and (min-width: 1390px) {
+	.about-header p {
+		max-width: 70%;
+	}
+
+	header .contact-paragraph {
+		max-width: 70%;
 	}
 }
 
